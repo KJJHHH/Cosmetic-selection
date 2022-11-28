@@ -152,38 +152,7 @@ prediction['skintype'] = skintype_all
 prediction['age'] = age_all
 prediction['score'] = score_all
     
-#a = [123, 456]
-#def abc():
-#    a.append(234)
-#    a[0] = 345
-#    a = 543
-
-#abc()
-#print(a)
-#with open("data/comment_allproduct[20].pickle", "rb") as f:
-#    abc = pickle.load(f)
-prediction
-
-from sklearn import preprocessing
-# Training
-skinagenum = pd.DataFrame()
-skin = []
-age = []
-score = []
-
-le = preprocessing.LabelEncoder()
-le.fit(['乾性肌膚', '普通性肌膚', '混合性肌膚', '油性肌膚', '敏感性肌膚', '先天過敏性肌膚'])
-
-for i in range(len(prediction['skintype'][3])):
-    skin_person = prediction['skintype'][3][i]
-    age_person = prediction['age'][3][i]
-    score_person = prediction['score'][3][i]
-    skin.append(le.transform([skin_person]))
-    age.append(age_person)
-    score.append(score_person)
 
 
-skinagenum['skin'] = skin
-skinagenum['age'] = age
-skinagenum['score'] = score
-skinagenum
+
+
